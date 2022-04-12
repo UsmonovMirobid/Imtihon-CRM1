@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    border-bottom: 4px solid saddlebrown;
+    margin: 0;
+    padding: 0;
+}
+
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logOut {
+    background-color: red;
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    color: #fff;
+    border: 3px solid tan;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.logOut:hover {
+    background-color: #fff;
+    color: tomato;
+    border: 3px solid red;
+}
+
+.main-wrapper1 {
+    border-bottom: 4px solid saddlebrown;
+}
+
+.main-list {
+    margin-top: 40px;
+    display: flex;
+    font-size: 20px;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.main-item {
+    width: 300px;
+    height: 50px;
+    padding-top: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.main-item:hover {
+    cursor: pointer;
+    background-color: rgba(43, 31, 31, 0.111);
+}
+
+.main-item + .main-item {
+    border-left: 4px solid saddlebrown;
+}
+
+.main-list2 {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-list2 li {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 0px 20px 20px 0px;
+}
+
+.groupName {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.teachers-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.teachers-item {
+    width: 645px; 
+    display: flex;
+    padding: 10px 25px;
+    font-size: 20px;
+    border-bottom: 3px solid saddlebrown;
+}
+
+.teachers-item__top { 
+    background-color: rgba(139, 69, 19, 0.877);
+}
+
+.teachers-item_text1 {
+    width: 300px;    
+}
+
+.teachers-item_text2 {
+    width: 300px;    
+}
+
+.teachers-item_text3 {
+    width: 300px;    
+}
+
+.buttons-teacher {
+    margin-top: 100px;
+}
+
+.groups-list {
+    list-style-type: none;
+}
+
+.groups-list h2 {
+    display: block;
+}
+
+.groups-list li {
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #ddd;
+    padding-top: 20px;
+}
+
+.groups-list h4 {
+    display: inline;
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "N15",
+        "course": "NodeJS",
+        "teacher": false,
+        "students": [
+            "qwerty",
+            "qwerty",
+            "q"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "P2",
+        "course": "NodeJS",
+        "teacher": false,
+        "students": []
+    },
+    {
+        "id": 3,
+        "name": "P3",
+        "course": "NodeJS",
+        "teacher": false,
+        "students": []
+    }
+]

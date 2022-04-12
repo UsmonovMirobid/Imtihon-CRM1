@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/admin.css" />
+		<link rel="stylesheet" href="/css/admin2.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-wrapper">
+					<h1>STUDY CENTER</h1>
+
+					<button class="logOut" id="logOut"><a href="">Log out</a></button>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="main-wrapper1">
+					<ul class="main-list">
+						<li class="main-item" id="courses">Kurslar</li>
+						<li class="main-item" id="groups">Guruhlar</li>
+						<li class="main-item" id="teachers">O'qituvchilar</li>
+						<li class="main-item" id="students">O'quvchilar</li>
+					</ul>
+				</div>
+
+				<h1 class="header">Please select one of the sections</h1>
+
+				<div class="courses-wrapper">
+					<div class="courses visually_hidden">
+						<% for(var i=0; i < courses.length; i++) { %>
+						<div class="wrapper">
+							<p class="course-text">
+								Course number: <%= courses[i].id %>
+							</p>
+							<h1 class="courses-header">
+								<%=courses[i].name %>
+							</h1>
+						</div>
+						<% } %>
+						<button class="btn-courses" id="addCourse">
+							Add course
+						</button>
+						<button class="remove-courses" id="removeCourse">
+							Remove course
+						</button>
+					</div>
+
+					<div class="addCourse visually_hidden">
+						<form
+							action="/addCourse"
+							method="POST"
+							class="addCourse-form"
+						>
+							<h1 class="addCourse-header">WRITE COURSE NAME</h1>
+							<input
+								name="name"
+								type="text"
+								placeholder="Course name"
+								class="addCourse-input"
+							/>
+							<button class="addCourse-btn">Send</button>
+							<div class="iks iks1">X</div>
+						</form>
+					</div>
+
+					<div class="removeCourse visually_hidden">
+						<form
+							action="/removeCourse"
+							method="POST"
+							class="removeCourse-form"
+						>
+							<h1 class="removeCourse-header">
+								CHAKED COURSE NUMBER
+							</h1>
+							<select name="id" id="select-removeCourse">
+								<% for(var i=0; i < courses.length; i++) { %>
+								<option><%= courses[i].name %></option>
+								<% } %>
+							</select>
+							<button class="removeCourse-btn">Send</button>
+							<div class="iks iks2">X</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="groups-wrapper">
+					<div class="groups visually_hidden">
+						<% for(var i=0; i < groups.length; i++) { %>
+						<div class="wrapper">
+							<h1 class="groups-header">
+								Group: <%=groups[i].name %>
+							</h1>
+							<p class="group-text">
+								Groups number: <%= groups[i].id %>
+							</p>
+							<p class="group-text">
+								Course : <%= groups[i].course %>
+							</p>
+						</div>
+						<% } %>
+						<button class="btn-groups" id="addGroup">
+							Add group
+						</button>
+						<button class="remove-groups" id="removeGroup">
+							Remove group
+						</button>
+					</div>
+
+					<div class="addGroup visually_hidden">
+						<form
+							action="/addGroup"
+							method="POST"
+							class="addGroup-form"
+						>
+							<h1 class="addGroup-header">Add new group</h1>
+							<input
+								name="name"
+								type="text"
+								class="addGroup-name"
+							/>
+							<select name="courseId" id="courseId">
+								<% for(var i=0; i < courses.length; i++) { %>
+								<option><%= courses[i].name %></option>
+								<% } %>
+							</select>
+							<button class="addGroup-btn">Send</button>
+							<div class="iks iks3">X</div>
+						</form>
+					</div>
+
+					<div class="removeGroup visually_hidden">
+						<form
+							action="/removeGroup"
+							method="POST"
+							class="removeGroup-form"
+						>
+							<h1 class="removeGroup-header">Remove group</h1>
+							<select name="id" id="groupId">
+								<% for(var i=0; i < groups.length; i++) { %>
+								<option><%= groups[i].name %></option>
+								<% } %>
+							</select>
+							<button class="removeGroup-btn">Send</button>
+							<div class="iks iks4">X</div>
+						</form>
+					</div>
+				</div>
+				<div class="teachers-wrapper">
+					<div class="teachers visually_hidden">
+						<ul class="teachers-list">
+							<li class="teachers-item teachers-item__top">
+								<p class="teachers-item_text1">ID</p>
+
+								<p class="teachers-item_text2">Name</p>
+
+								<p class="teachers-item_text3">Course</p>
+
+								<p class="teachers-item_text4">Password</p>
+							</li>
+							<% for(var i=0; i < teachers.length; i++) { %>
+							<li class="teachers-item">
+								<p class="teachers-item_text1">
+									<%= teachers[i].id %>
+								</p>
+								<p class="teachers-item_text2">
+									<%= teachers[i].name %>
+								</p>
+								<p class="teachers-item_text3">
+									<%= teachers[i].course %>
+								</p>
+								<p class="teachers-item_text4">
+									<%= teachers[i].password %>
+								</p>
+							</li>
+							<% } %>
+						</ul>
+						<div class="buttons-teacher">
+							<button class="addTeacher">Add Teacher</button>
+							<button class="removeTeacher">
+								Remove Teacher
+							</button>
+							<button class="attCourse">Course attachment</button>
+						</div>
+						<div id="addTeacher" class="visually_hidden">
+							<form action="/addTeacher" method="POST">
+								<input
+									name="name"
+									type="text"
+									placeholder="Name"
+									class="addTeacher-input"
+								/>
+								<input
+									name="password"
+									type="password"
+									placeholder="Password"
+									class="addTeacher-input"
+								/>
+								<select
+									name="courseTeacher"
+									id="courseTeacher"
+									class="addTeacher-select"
+								>
+									<% for(var i=0; i < courses.length; i++) {
+									%>
+									<option><%= courses[i].name %></option>
+									<% } %>
+								</select>
+								<button type="submit" class="send">Send</button>
+								<div class="iks iks5">X</div>
+							</form>
+						</div>
+						<div class="removeTeachers visually_hidden">
+							<form
+								action="/removeTeacher"
+								method="POST"
+								class="removeTeacher-form"
+							>
+								<h1 class="removeTeacher-header">
+									Remove Teacher
+								</h1>
+								<select name="id" class="removeTeacher-select">
+									<% for(var i=0; i < teachers.length; i++) {
+									%>
+									<option><%= teachers[i].id %></option>
+									<% } %>
+								</select>
+								<button type="submit" class="removeTeacher-btn">
+									Remove
+								</button>
+								<div class="iks iks6">X</div>
+							</form>
+						</div>
+						<div id="attach" class="visually_hidden">
+							<form
+								action="/attach"
+								class="attach-form"
+								method="POST"
+							>
+								<h2 class="teacherName-header">Teachers</h2>
+								<select name="teacherName" class="teacher-name">
+									<% for(var i=0; i < teachers.length; i++) {
+									%>
+									<option><%= teachers[i].name %></option>
+									<% } %>
+								</select>
+								<h2 class="groupName-header">
+									Teacher-undefined groups
+								</h2>
+								<select name="groupName" class="group-name">
+									<% for(var i=0; i < filterGroups.length;
+									i++) { %>
+									<option><%= filterGroups[i].name %></option>
+									<% } %>
+								</select>
+								<button type="submit" class="send">Send</button>
+								<div class="iks iks7">X</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="students-wrapper">
+					<div class="students teachers visually_hidden">
+						<ul class="teachers-list">
+							<li class="teachers-item teachers-item__top">
+								<p class="teachers-item_text1">ID</p>
+
+								<p class="teachers-item_text2">Name</p>
+
+								<p class="teachers-item_text3">Group</p>
+
+								<p class="teachers-item_text4">Password</p>
+							</li>
+							<% for(var i=0; i < filterStudents.length; i++) { %>
+							<li class="teachers-item">
+								<p class="teachers-item_text1">
+									<%= filterStudents[i].id %>
+								</p>
+								<p class="teachers-item_text2">
+									<%= filterStudents[i].name %>
+								</p>
+								<p class="teachers-item_text3">
+									<%= filterStudents[i].group %>
+								</p>
+								<p class="teachers-item_text4">
+									<%= filterStudents[i].password %>
+								</p>
+							</li>
+							<% } %>
+						</ul>
+						<div class="buttons-teacher">
+							<button class="addStudent-btn">Add Student</button>
+							<button class="removeTeacher" id="removeStudentBtn">
+								Remove Student
+							</button>
+						</div>
+						<div class="addStudent visually_hidden">
+							<form action="/addStudent" method="POST">
+								<input
+									type="text"
+									class="addStudent-input"
+									name="name"
+									placeholder="Name"
+								/>
+								<input
+									type="password"
+									class="addStudent-input"
+									name="password"
+									placeholder="Password"
+								/>
+								<select
+									name="addStudentGroupName"
+									id="addStudentGroupName"
+								>
+									<% for(var i=0; i < groups.length; i++) { %>
+									<option><%= groups[i].name %></option>
+									<% } %>
+								</select>
+								<button class="send">Send</button>
+								<div class="iks iks8">X</div>
+							</form>
+						</div>
+						<div id="removeStudent-wrapper" class="visually_hidden">
+							<form
+								action="/removeStudent"
+								class="removeStudent-form"
+								method="POST"
+							>
+								<select name="id" id="removeStudent">
+									<% for(var i=0; i < filterStudents.length; i++) { %>
+										<option><%= filterStudents[i].id %></option>
+									<% } %>
+								</select>
+								<button class="send">Remove student</button>
+								<div class="iks iks9">X</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>

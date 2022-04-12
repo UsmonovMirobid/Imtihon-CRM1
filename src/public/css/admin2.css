@@ -1,0 +1,225 @@
+.teachers {
+    display: flex;
+}
+
+.teachers-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.teachers-item {
+    width: 645px; 
+    display: flex;
+    padding: 10px 25px;
+    font-size: 20px;
+    border-bottom: 3px solid saddlebrown;
+}
+
+.teachers-item__top { 
+    background-color: rgba(139, 69, 19, 0.877);
+}
+
+.teachers-item_text1 {
+    width: 300px;    
+}
+
+.teachers-item_text2 {
+    width: 300px;    
+}
+
+.teachers-item_text3 {
+    width: 300px;    
+}
+
+.buttons-teacher {
+    margin-top: 100px;
+}
+
+.addTeacher, .removeTeacher, .attCourse, .addStudent-btn, .removeTeacher-btn {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.addTeacher, .addStudent-btn {
+    background-color: green;
+}
+
+.addTeacher:hover, .addStudent-btn:hover {
+    background-color: greenyellow;
+    border: 2px solid green;
+    color: blue;
+}
+
+.removeTeacher {
+    background-color: red;
+}
+
+.removeTeacher:hover {
+    background-color: rgb(197, 34, 34);
+    border: 2px solid springgreen;
+    color: #fff;
+}
+
+#addTeacher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.458);
+}
+
+#addTeacher  form {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    text-align: center;
+}
+
+.addTeacher-input {
+    width: 200px;
+    height: 40px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.addTeacher-select {
+    width: 180px;
+    height: 60px;
+    margin: 0;
+    border: none;
+    padding: 10px 15px;
+}
+
+.send {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: saddlebrown;
+    border: none;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.removeTeachers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.534);
+}
+
+.removeTeacher-form {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    text-align: center;
+}
+
+.removeTeacher-header {
+    color: blue;
+    font-size: 35px;
+}
+
+.removeTeacher-select {
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.removeTeacher-btn {
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    color: #ddd;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#attach {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+.attach-form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    color: red;
+    font-size: 20px;
+}
+
+#removeStudent-wrapper, .removeStudent, .addStudent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(221, 221, 221, 0.704);
+}
+
+.addStudent form {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#removeStudent-wrapper form {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addStudent-input {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+#addStudentGroupName, #removeStudent {
+    width: 200px;
+    height: 30px;
+}

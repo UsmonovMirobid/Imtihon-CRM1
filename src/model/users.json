@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "adminjon",
+        "password": "admincik",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "qwerty",
+        "password": "w",
+        "role": "student",
+        "group": "N15"
+    },
+    {
+        "id": 3,
+        "name": "q",
+        "password": "1",
+        "role": "student",
+        "group": "N15"
+    },
+    {
+        "id": 4,
+        "name": "asd",
+        "password": "1",
+        "role": "teacher",
+        "course": []
+    }
+]
